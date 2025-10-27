@@ -1,0 +1,64 @@
+/* outfit */
+
+@font-face {
+    font-family: font-primary-en;
+    src: url('outfit/woff/medium.woff') format('woff'),
+    url('outfit/woff2/medium.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-ultra-light-en;
+    src: url('outfit/woff/extralight.woff') format('woff'),
+    url('outfit/woff2/extralight.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-light-en;
+    src: url('outfit/woff/light.woff') format('woff'),
+    url('outfit/woff2/light.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-regular-en;
+    src: url('outfit/woff/regular.woff') format('woff'),
+    url('outfit/woff2/regular.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-medium-en;
+    src: url('outfit/woff/medium.woff') format('woff'),
+    url('outfit/woff2/medium.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-bold-en;
+    src: url('outfit/woff/bold.woff') format('woff'),
+    url('outfit/woff2/bold.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-demi-bold-en;
+    src: url('outfit/woff/semibold.woff') format('woff'),
+    url('outfit/woff2/semibold.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-extra-bold-en;
+    src: url('outfit/woff/extrabold.woff') format('woff'),
+    url('outfit/woff2/extrabold.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
+
+@font-face {
+    font-family: font-black-en;
+    src: url('outfit/woff/black.woff') format('woff'),
+    url('outfit/woff2/black.woff2') format('woff2');
+    font-variation-settings: "rdot" 1;
+}
