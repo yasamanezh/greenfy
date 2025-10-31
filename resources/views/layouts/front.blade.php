@@ -11,13 +11,19 @@
 
     <meta content="" name="description" />
     @include('livewire.front.partials.head')
+    <style>
+        .dropdown-toggle::after {
+            display: none !important;
+
+        }
+    </style>
 </head>
 
 <body>
 
     @include('livewire.front.partials.header')
 
-     {{ $slot }}
+    {{ $slot }}
     @include('livewire.front.partials.footer')
 
     @include('livewire.front.partials.scripts')

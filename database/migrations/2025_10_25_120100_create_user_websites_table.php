@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('domain')->unique();
+            $table->string('domain')->unique()->nullable();
             $table->string('subdomain')->unique();
             $table->text('description')->nullable();
             $table->string('theme')->nullable();

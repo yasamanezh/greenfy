@@ -71,14 +71,48 @@
             <!-- Toolbar: Start -->
             <ul class="navbar-nav flex-row align-items-center ms-auto">
 
-                <!-- navbar button: Start -->
-                <li>
-                    <a class="btn btn-primary" href="https://www.rtl-theme.com/vuexy-admin-html-template/" target="_blank">
-                        <span class="tf-icons ti ti-shopping-bag scaleX-n1-rtl me-md-1"></span>
-                        <span class="d-none d-md-block">خرید ویکسیءء</span>
-                    </a>
-                </li>
-                <!-- navbar button: End -->
+                @auth
+               
+                    <!-- User Dropdown: Start -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link-user" href="#" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="user-nav d-sm-flex d-none user-nav-name ps-2">
+                                <div class="user-nav-name d-flex align-items-center">
+                                    <span class="user-nav-name-text">{{ auth()->user()->name ?? auth()->user()->phone }}</span>
+                                    <i class="ti ti-chevron-down ti-sm ms-1"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                    <i class="ti ti-dashboard me-2"></i>
+                                    <span>داشبورد</span>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">
+                                        <i class="ti ti-logout me-2"></i>
+                                        <span>خروج</span>
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- User Dropdown: End -->
+                @else
+                    <!-- Login/Register buttons: Start -->
+                    <li>
+                        <a class="btn btn-primary" href="{{ route('login') }}">
+                            <span class="tf-icons ti ti-login scaleX-n1-rtl me-md-1"></span>
+                            <span class="d-none d-md-block">ورود / ثبت نام</span>
+                        </a>
+                    </li>
+                    <!-- Login/Register buttons: End -->
+                @endauth
 
             </ul>
 

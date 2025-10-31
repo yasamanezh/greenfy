@@ -1,135 +1,100 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html class="light-style layout-wide customizer-hide" data-assets-path="{{ asset('assets/') }}"
+    data-template="vertical-menu-template-no-customizer" data-theme="theme-default" dir="rtl" lang="fa">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {!! app('seotools')->generate() !!}
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+        name="viewport" />
+    <title>@yield('title', 'احراز هویت') | {{ config('app.name') }}</title>
+    <meta content="" name="description" />
+    <!-- Favicon -->
+    <link href="{{ asset('assets/img/favicon/favicon.ico') }}" rel="icon" type="image/x-icon" />
+    <!-- Icons -->
+    <link href="{{ asset('assets/assets/vendor/fonts/fontawesome.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/vendor/fonts/tabler-icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/vendor/fonts/flag-icons.css') }}" rel="stylesheet" />
+    <!-- Core CSS -->
+    <link href="{{ asset('assets/assets/vendor/css/rtl/core.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/vendor/css/rtl/theme-default.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/css/demo.css') }}" rel="stylesheet" />
+    <!-- Vendors CSS -->
+    <link href="{{ asset('assets/assets/vendor/libs/node-waves/node-waves.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/vendor/libs/typeahead-js/typeahead.css') }}" rel="stylesheet" />
+    <!-- Vendor -->
 
+    <link href="{{ asset('assets/assets/vendor/libs/bs-stepper/bs-stepper.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/vendor/libs/bootstrap-select/bootstrap-select.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/assets/vendor/libs/select2/select2.css') }}" rel="stylesheet" />
 
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/materialdesignicons.css') }}" />
-
-    <!--    bootstrap------------------------------->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}" />
-    <!--    owl.carousel---------------------------->
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
-    <!--    fancybox-------------------------------->
-    <link rel="stylesheet" href="{{ asset('assets/css/fancybox.min.css') }}">
-    <!--    responsive------------------------------>
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/noUISlider.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-slider.min.css') }}" />
-
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/custome.css')}}?{{time()}}" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="{{ url('/manifest.json') }}">
-    <meta name="theme-color" content="#fff" />
-   
-    <style>
-        :root {
-            --primary: {{ $design->primary_color }};
-            --primary-light: {{ $design->primary_light }};
-            --primary-dark: {{ $design->primary_dark }};
-            --background: {{ $design->body_color }};
-            --text: {{ $design->text_color }};
-            --border-radius: {{ $design->border_radius }}px;
-            --menu-bg: {{ $design->menu_bg }};
-            --menu-color: {{ $design->menu_color }};
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryItems = document.querySelectorAll('.category-item');
-            const submenuContents = document.querySelectorAll('.submenu-content');
-
-            categoryItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    const targetId = this.dataset.category;
-
-                    categoryItems.forEach(cat => cat.classList.remove('active'));
-                    submenuContents.forEach(content => content.classList.remove('active'));
-
-                    this.classList.add('active');
-                    document.getElementById(targetId).classList.add('active');
-                });
-            });
-        });
-    </script>
-
-
-    <livewire:front.layouts.head />
+    <!-- Page CSS -->
+    <link href="{{ asset('assets/assets/vendor/css/pages/page-auth.css') }}" rel="stylesheet" />
+    <!-- Helpers -->
+    <script src="{{ asset('assets/assets/vendor/js/helpers.js') }}"></script>
+    <script src="{{ asset('assets/assets/js/config.js') }}"></script>
+    <!-- Better experience of RTL -->
+    <link href="{{ asset('assets/assets/css/rtl.css') }}" rel="stylesheet" />
+    @stack('styles')
+    @livewireStyles
 </head>
 
 <body>
-    <!--header------------------------------------->
-    <livewire:front.layouts.header />
+    <div class="container-xxl">
+        <div class="authentication-wrapper authentication-basic container-p-y">
+            <div class="authentication-inner py-4" style="max-width: 500px;">
+                <!-- Register Card -->
+                <div class="card">
+                    <div class="card-body">
+                            {{ $slot }}
+                    </div>
+                </div>
+                <!-- Register Card -->
+            </div>
+        </div>
+    </div>
+ 
 
-    {{ $slot }}
+    <!-- Core JS -->
+    <script src="{{ asset('assets/assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/node-waves/node-waves.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/hammer/hammer.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/i18n/i18n.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/typeahead-js/typeahead.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/js/menu.js') }}"></script>
 
-    <livewire:front.layouts.footer />
 
-    <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+    <!-- Vendors JS -->
+    <script src="{{ asset('assets/assets/vendor/libs/cleavejs/cleave.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/bs-stepper/bs-stepper.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/select2/select2.js') }}"></script>
+    <script src="{{ asset('assets/assets/vendor/libs/select2/i18n/fa.js') }}"></script>
 
-    <!--    bootstrap-------------------------------->
-    <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
-    <!--    owl.carousel----------------------------->
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <!--fancybox------------------------------------->
-    <script src="{{ asset('assets/js/jquery.fancybox.min.js') }}"></script>
-
-    <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
-    <script src="{{ asset('assets/js/wNumb.js') }}"></script>
-
-    <!--countdown------------------------------------>
-    @stack('jsBeforMain')
-
-    <!--main----------------------------------------->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Main JS -->
+    <script src="{{ asset('assets/assets/js/main.js') }}"></script>
     <script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'center',
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
+        function togglePassword(targetId, el) {
+            const input = document.getElementById(targetId);
+            if (!input) {
+                return;
             }
-        })
+            const icon = el.querySelector('i');
+            const isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
 
-        document.addEventListener('livewire:load', () => {
-            Livewire.on('toast', (type, message) => {
-                Toast.fire({
-                    icon: type,
-                    title: message
-                })
+            if (icon) {
+                icon.classList.toggle('ti-eye-off', !isPassword);
+                icon.classList.toggle('ti-eye', isPassword);
+            }
 
-            })
-        })
-        ClassicEditor
-            .create(document.querySelector('.editor'), {
-                language: {
-                    ui: 'fa',
-                    content: 'fa'
-                }
-            })
-
-            .catch(error => {
-                console.error(error);
-            });
+            input.focus();
+        }
     </script>
-    @stack('jsPanel')
 
-
-    <livewire:scripts />
-
+    @livewireScripts
 </body>
 
 </html>
